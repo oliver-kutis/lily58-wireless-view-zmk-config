@@ -14,7 +14,16 @@
             compatible = "zmk,behavior-tap-dance";
             label = "UNDO_REDO";
             #binding-cells = <0>;
-            bindings = <&kp K_UNDO>, <&kp K_REDO>;
+            bindings = <&kp C_AC_UNDO>, <&kp C_AC_REDO>;
+        };
+    };
+
+    macros {
+        new_macro: new_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>;
+            label = "NEW_MACRO";
         };
     };
 
