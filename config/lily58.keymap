@@ -63,6 +63,13 @@
             #binding-cells = <0>;
             mods = <(MOD_LSFT)>;
         };
+
+        td_1_to0_2_esc: td_1_to0_2_esc {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_1_TO0_2_ESC";
+            #binding-cells = <0>;
+            bindings = <&to 0>, <&kp ESC>;
+        };
     };
 
     macros {
@@ -87,11 +94,11 @@
 
             display-name = "Base";
             bindings = <
-&kp ESC           &kp NUMBER_1  &kp N2  &kp N3    &kp N4  &kp N5                                   &kp N6         &kp N7  &kp N8      &kp N9   &kp N0    &kp EQUAL
-&kp TAB           &kp Q         &kp W   &kp E     &kp R   &kp T                                    &kp Y          &kp U   &kp I       &kp O    &kp P     &kp MINUS
-&kp LEFT_CONTROL  &kp A         &kp S   &kp D     &kp F   &kp G                                    &kp H          &kp J   &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z         &kp X   &kp C     &kp V   &kp B             &kp ESC      &kp RALT  &kp N          &kp M   &kp COMMA   &kp DOT  &kp FSLH  &kp BACKSLASH
-                                        &kp LALT  &tog 1  &kp LEFT_COMMAND  &kp SPACE    &kp RET   &kp BACKSPACE  &mo 2   &kp DELETE
+&kp ESC           &kp NUMBER_1  &kp N2  &kp N3    &kp N4  &kp N5                                         &kp N6         &kp N7  &kp N8      &kp N9   &kp N0    &kp EQUAL
+&kp TAB           &kp Q         &kp W   &kp E     &kp R   &kp T                                          &kp Y          &kp U   &kp I       &kp O    &kp P     &kp MINUS
+&kp LEFT_CONTROL  &kp A         &kp S   &kp D     &kp F   &kp G                                          &kp H          &kp J   &kp K       &kp L    &kp SEMI  &kp SQT
+&kp LEFT_SHIFT    &kp Z         &kp X   &kp C     &kp V   &kp B             &td_1_to0_2_esc    &kp RALT  &kp N          &kp M   &kp COMMA   &kp DOT  &kp FSLH  &kp BACKSLASH
+                                        &kp LALT  &to 1   &kp LEFT_COMMAND  &kp SPACE          &kp RET   &kp BACKSPACE  &mo 2   &kp DELETE
             >;
 
             sensor-bindings = <&inc_dec_kp C_VOL_UP C_VOL_DN>;
@@ -127,7 +134,7 @@
 
             display-name = "Raise";
             bindings = <
-&trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &tog 4   &trans                       &trans     &trans     &trans     &trans         &trans      &kp K_LOCK
+&trans  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &tog 4   &trans                       &trans     &trans     &trans     &trans         &trans      &kp CAPSLOCK
 &trans  &kp N1        &kp N2        &kp N3        &kp N4   &kp N5                       &kp N6     &kp N7     &kp N8     &kp N9         &kp N0      &trans
 &kp F1  &kp F2        &kp F3        &kp F4        &kp F5   &kp F6                       &kp LEFT   &kp DOWN   &kp UP     &kp RIGHT      &trans      &trans
 &kp F7  &kp F8        &kp F9        &kp F10       &kp F11  &kp F12  &kp DOWN    &kp UP  &kp UNDER  &kp MINUS  &kp SLASH  &kp BACKSLASH  &undo_redo  &trans
