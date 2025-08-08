@@ -3,17 +3,16 @@
  *
  * SPDX-License-Identifier: MIT
  */
+/*
+    Increase pointer / scroll speed
+*/
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
 
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
-
-/*
-    Increase pointer / scroll speed
-*/
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1500  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 20    // default: 10
-
 #include <dt-bindings/zmk/pointing.h>
 
 / {
@@ -104,7 +103,7 @@
 &kp ESC           &kp NUMBER_1  &kp N2  &kp N3    &kp N4  &kp N5                                         &kp N6         &kp N7  &kp N8      &kp N9   &kp N0    &kp EQUAL
 &kp TAB           &kp Q         &kp W   &kp E     &kp R   &kp T                                          &kp Y          &kp U   &kp I       &kp O    &kp P     &kp MINUS
 &kp LEFT_CONTROL  &kp A         &kp S   &kp D     &kp F   &kp G                                          &kp H          &kp J   &kp K       &kp L    &kp SEMI  &kp SQT
-&kp LEFT_SHIFT    &kp Z         &kp X   &kp C     &kp V   &kp B             &td_1_to0_2_esc    &kp RALT  &kp N          &kp M   &kp COMMA   &kp DOT  &kp FSLH  &kp BACKSLASH
+&kp LEFT_SHIFT    &kp Z         &kp X   &kp C     &kp V   &kp B             &td_1_to0_2_esc    &sk RALT  &kp N          &kp M   &kp COMMA   &kp DOT  &kp FSLH  &kp BACKSLASH
                                         &kp LALT  &mo 1   &kp LEFT_COMMAND  &kp SPACE          &kp RET   &kp BACKSPACE  &mo 2   &kp DELETE
             >;
 
@@ -166,11 +165,11 @@
 
         mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans                              &trans                &trans                &trans              &trans                 &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans                              &trans                &mkp MB1              &mkp MB2            &trans                 &mkp MB4  &trans
-&trans  &trans  &trans  &trans  &trans  &trans                              &mm_move_scroll_left  &mm_move_scroll_down  &mm_move_scroll_up  &mm_move_scroll_right  &trans    &trans
-&trans  &trans  &trans  &trans  &trans  &trans  &kp PAGE_DOWN    &kp PG_UP  &mkp MB5              &trans                &trans              &trans                 &trans    &trans
-                        &trans  &trans  &trans  &trans           &mkp MCLK  &trans                &trans                &trans
+&trans      &trans  &trans  &trans  &trans  &trans                              &trans                &trans                &trans              &trans                 &trans    &trans
+&trans      &trans  &trans  &trans  &trans  &trans                              &trans                &mkp MB1              &mkp MB2            &trans                 &mkp MB4  &trans
+&trans      &trans  &trans  &trans  &trans  &trans                              &mm_move_scroll_left  &mm_move_scroll_down  &mm_move_scroll_up  &mm_move_scroll_right  &trans    &trans
+&sk LSHIFT  &trans  &trans  &trans  &trans  &trans  &kp PAGE_DOWN    &kp PG_UP  &mkp MB5              &trans                &trans              &trans                 &trans    &trans
+                            &trans  &trans  &trans  &trans           &mkp MCLK  &trans                &trans                &trans
             >;
         };
     };
